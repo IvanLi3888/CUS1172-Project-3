@@ -23,6 +23,16 @@
                 "lungs",
                 "stomach"
             ]
+        },
+        {
+            "id": 3,
+            "title": "true or false?",
+            "type": "true-false",
+            "correct": "false",
+            "answers": [
+                "true",
+                "false"
+            ]
         }
 
     ]
