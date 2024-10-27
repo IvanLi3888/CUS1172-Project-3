@@ -1,39 +1,108 @@
 {
-    "questions": [
+    "quiz-bank": [
         {
             "id": 1,
-            "title": "Name of African Swallow?",
-            "type": "multiple-choice",
-            "correct": "right",
-            "answers": [
-                "wrong",
-                "wrong2",
-                "right",
-                "wrong3"
+            "title": "Quiz 1",
+            "questions": [
+                {
+                    "id": 1,
+                    "title": "Name of African Swallow?",
+                    "type": "multiple-choice",
+                    "correct": "right",
+                    "answers": [
+                        "wrong",
+                        "wrong2",
+                        "right",
+                        "wrong3"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "How to breathe?",
+                    "type": "multiple-choice",
+                    "correct": "lungs",
+                    "answers": [
+                        "heart",
+                        "brain",
+                        "lungs",
+                        "stomach"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "true or false?",
+                    "type": "true-false",
+                    "correct": "false",
+                    "answers": [
+                        "true",
+                        "false"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "How to buy stuff?",
+                    "type": "fill-in",
+                    "correct": "money"
+                },
+                {
+                    "id": 5,
+                    "title": "What is the coding language that handles logic for this webpage?",
+                    "type": "fill-in",
+                    "correct": "JavaScript"
+                }
             ]
         },
         {
             "id": 2,
-            "title": "How to breathe?",
-            "type": "multiple-choice",
-            "correct": "lungs",
-            "answers": [
-                "heart",
-                "brain",
-                "lungs",
-                "stomach"
-            ]
-        },
-        {
-            "id": 3,
-            "title": "true or false?",
-            "type": "true-false",
-            "correct": "false",
-            "answers": [
-                "true",
-                "false"
+            "title": "Quiz 2",
+            "questions": [
+                {
+                    "id": 1,
+                    "title": "1+1?",
+                    "type": "multiple-choice",
+                    "correct": "2",
+                    "answers": [
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "How to eat?",
+                    "type": "multiple-choice",
+                    "correct": "lungs",
+                    "answers": [
+                        "mouth",
+                        "nose",
+                        "legs",
+                        "feet"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "true or false?",
+                    "type": "true-false",
+                    "correct": "true",
+                    "answers": [
+                        "true",
+                        "false"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "1 + 1?",
+                    "type": "fill-in",
+                    "correct": "window"
+                },
+                {
+                    "id": 5,
+                    "title": "Did you like this quiz?",
+                    "type": "fill-in",
+                    "correct": "Yes"
+                }
             ]
         }
-
     ]
 }
