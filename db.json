@@ -1,0 +1,16 @@
+{
+    "question": [
+        {
+            "id": 1,
+            "title": "Name of African Swallow?",
+            "type": "multiple-choice",
+            "correct": "right",
+            "options": [
+                "wrong",
+                "wrong2",
+                "right",
+                "wrong3"
+            ]
+        }
+    ]
+}
