@@ -1,16 +1,29 @@
 {
-    "question": [
+    "questions": [
         {
             "id": 1,
             "title": "Name of African Swallow?",
             "type": "multiple-choice",
             "correct": "right",
-            "options": [
+            "answers": [
                 "wrong",
                 "wrong2",
                 "right",
                 "wrong3"
             ]
+        },
+        {
+            "id": 2,
+            "title": "How to breathe?",
+            "type": "multiple-choice",
+            "correct": "lungs",
+            "answers": [
+                "heart",
+                "brain",
+                "lungs",
+                "stomach"
+            ]
         }
+
     ]
 }
