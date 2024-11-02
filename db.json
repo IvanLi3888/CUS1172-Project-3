@@ -1,59 +1,74 @@
 {
     "quiz-bank": [
         {
-            "id": 1,
+            "id": 0,
             "title": "Quiz 1",
             "questions": [
                 {
                     "id": 1,
-                    "title": "Name of African Swallow?",
+                    "title": "What coding language is this quiz app using to display content?",
                     "type": "multiple-choice",
-                    "correct": "right",
+                    "correct": "HTML",
                     "answers": [
-                        "wrong",
-                        "wrong2",
-                        "right",
-                        "wrong3"
+                        "HTML",
+                        "Java",
+                        "Python",
+                        "C++"
                     ]
                 },
                 {
                     "id": 2,
-                    "title": "How to breathe?",
+                    "title": "Which of the following is a class selector?",
                     "type": "multiple-choice",
-                    "correct": "lungs",
+                    "correct": ".myclass",
                     "answers": [
-                        "heart",
-                        "brain",
-                        "lungs",
-                        "stomach"
+                        "!myclass",
+                        "@myclass",
+                        "#myclass",
+                        ".myclass"
                     ]
                 },
                 {
                     "id": 3,
-                    "title": "true or false?",
-                    "type": "true-false",
-                    "correct": "false",
+                    "title": "Type the html element that makes up the items in each list. ex: <name>",
+                    "type": "open-ended",
+                    "correct": "<li>",
                     "answers": [
-                        "true",
-                        "false"
+                        "one",
+                        "two",
+                        "three",
+                        "four"
                     ]
                 },
                 {
                     "id": 4,
-                    "title": "How to buy stuff?",
-                    "type": "fill-in",
-                    "correct": "money"
+                    "title": "Type the html element that allows you to use an external .css file for an html page",
+                    "type": "open-ended",
+                    "correct": "<link>",
+                    "answers": [
+                        "three",
+                        "four",
+                        "five",
+                        "six"
+                    ]
+                
                 },
                 {
                     "id": 5,
-                    "title": "What is the coding language that handles logic for this webpage?",
-                    "type": "fill-in",
-                    "correct": "JavaScript"
+                    "title": "Which of these pictures contains a correct way to define a function in Javascript?",
+                    "type": "image",
+                    "correct": "js1", 
+                    "answers": [
+                        "js1",
+                        "js2",
+                        "js3",
+                        "js4"
+                    ]
                 }
             ]
         },
         {
-            "id": 2,
+            "id": 1,
             "title": "Quiz 2",
             "questions": [
                 {
