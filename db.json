@@ -10,10 +10,10 @@
                     "type": "multiple-choice",
                     "correct": "HTML",
                     "answers": [
-                        "HTML",
-                        "Java",
-                        "Python",
-                        "C++"
+                        {"answer" : "HTML"},
+                        {"answer" : "Java"},
+                        {"answer" : "Python"},
+                        {"answer" : "C++"}
                     ]
                 },
                 {
@@ -59,10 +59,10 @@
                     "type": "image",
                     "correct": "js1", 
                     "answers": [
-                        "js1",
-                        "js2",
-                        "js3",
-                        "js4"
+                        "/project03/img/js1.png",
+                        "/project03/img/js2.png",
+                        "/project03/img/js3.png",
+                        "/project03/img/js4.png"
                     ]
                 }
             ]
