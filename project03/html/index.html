@@ -55,7 +55,6 @@
 </script>
 
 <script id="scoreboard-view" type="text/x-handlebars-template">
-
     <div id="scoreboard">
         <h2 id="number-correct"></h2>
         <h2 id="number-answered"></h2>
@@ -66,6 +65,14 @@
 <script id="well-done" type="text/x-handlebars-template">
     <div>
         <h1> Good job!</h1>
+    </div>
+</script>
+
+<script id="wrong-answer" type="text/x-handlebars-template">
+    <div>
+        <h1> Sorry, that is incorrect.</h1>
+        <h2 id="explanation">{{explanation}}</h2>
+        <button id="continue"> Got it!</button>
     </div>
 </script>
 
@@ -113,11 +120,11 @@
     <h2 id="question"> {{title}} </h2>
     <div id="answer-bank" class="form-check">
         {{#each answers}}
-        {{#if this.answer}}
-        <img src="{{this.answer}}" value="{{this.answer}}">
-        {{else}}
+        <button type="button" class="btn btn-outline-primary answer-option" value="{{this}}">
+            {{this}}
+        </button>
         <img src="{{this}}" value="{{this}}">
-        {{/if}}
+        <br>
         {{/each}}
 
     </div>

@@ -17,8 +17,8 @@ let quizzes = [];
 var correct_answer;
 var questions_answered;
 var questions_correct;
-var total_questions;
 var time_elapsed;
+var total_questions;
 var quiz;
 
 var render_login = (view_id) => {
@@ -45,21 +45,35 @@ var render_quiz_select = (view_id, username) => {
 var render_quiz_question = async (quiz_id, question_id) => {
 
     quiz = quiz_id;
-    questions_answered++;
 
     const data = await fetch("https://my-json-server.typicode.com/IvanLi3888/CUS1172-Project-3/quiz-bank/" + quiz_id);
     const model = await data.json();
 
     console.log("Fetched model:", model);
+    console.log("Question id:" + question_id);
     console.log("Selected question data:", model.questions[question_id - 1].type);
 
     // if start of quiz, set total amount of questions and set up scoreboard 
     if (question_id - 1 == 0) {
         total_questions = model.questions.length;
         console.log(total_questions);
+        console.log("Staring Quiz");
+
+        // set/reset starting values
+        questions_answered = 1;
+        questions_correct = 0;
+        time_elapsed = 0;
+
 
         // set up scoreboard
+        view = render_scoreboard();
+        document.querySelector("#scoreboard-widget").innerHTML = view;
+
+
     }
+    // update the numbers on the scoreboard
+    update_scoreboard();
+
 
     console.log("Rendering view");
 
@@ -70,7 +84,7 @@ var render_quiz_question = async (quiz_id, question_id) => {
     } else if (model.questions[question_id - 1].type == "open-ended") {
         // if question is open-ended
         var source = document.querySelector("#quiz-open-ended").innerHTML;
-    } else if (model.questions[question_id - 1].type == "image"){
+    } else if (model.questions[question_id - 1].type == "image") {
         var source = document.querySelector("#quiz-image").innerHTML;
     }
 
@@ -78,6 +92,7 @@ var render_quiz_question = async (quiz_id, question_id) => {
     var html = template(model.questions[question_id - 1]);
     correct_answer = model.questions[question_id - 1].correct;
     console.log(correct_answer);
+
     return html;
 
 }
@@ -90,6 +105,24 @@ var render_welldone = (view_id) => {
     return html;
 
 
+}
+
+var render_incorrect = (view_id) => {
+    console.log("Rendering explanation view");
+    var source = document.querySelector(view_id).innerHTML;
+    var template = Handlebars.compile(source);
+    // TODO put explanations in json
+    var html = template();
+    return html;
+}
+
+var render_scoreboard = () => {
+    console.log("Rendering scoreboard");
+    var source = document.querySelector("#scoreboard-view").innerHTML;
+    var template = Handlebars.compile(source);
+    var html = template();
+
+    return html;
 }
 async function handle_event(e) {
     if (e.target.id == "submit-name") {
@@ -107,21 +140,23 @@ async function handle_event(e) {
     }
     // handles event when user chooses an answer
     if (e.target.classList.contains("answer-option") || e.target.id == "submit-answer") {
-        // handling if answer is right or not
-        if (document.getElementById("submit-answer") !== null){
+        // gets the button value or form value depending on type of question
+        if (document.getElementById("submit-answer") !== null) {
             var answer = document.querySelector("#answer").value;
-        } else{
+        } else {
             var answer = e.target.value;
         }
         console.log(answer);
+
+        // handling if answer is right or not
         if (answer == correct_answer) {
             // if right, say the well done display and move on
             quiz_correct();
         } else {
-            // if wrong, say right answer and explanation
-            quiz_incorrect();
+            // if wrong, say right answer and explanation view
+            quiz_incorrect(answer, correct_answer);
         }
-        // check if end of quiz, if so then show score and further details and go back to main
+
     }
 
     return false;
@@ -132,21 +167,46 @@ async function handle_event(e) {
 var quiz_correct = () => {
 
     console.log("Right");
+
     questions_correct++;
+    update_scoreboard();
     const view = render_welldone("#well-done");
 
     document.querySelector("#quiz-widget").innerHTML = view;
 
     setTimeout(async () => {
-        const view = await render_quiz_question(quiz, questions_answered + 1);
+        // TODO put a if statement to check if end of quiz and if so put function to go elsewhere
+        questions_answered++;
+        const view = await render_quiz_question(quiz, questions_answered);
+        
 
         document.querySelector("#quiz-widget").innerHTML = view;
     }, 1000);
 }
 // TODO
-var quiz_incorrect = () => {
+var quiz_incorrect = (answer, correct_answer) => {
     console.log("Wrong");
+    console.log("Your Answer: " + answer);
+    console.log("Correct Answer: " + correct_answer);
+    // TODO put a function to show correct answer view
+    
+    const view = render_incorrect("#wrong-answer");
 
+    document.querySelector("#quiz-widget").innerHTML = view;
+    // TODO put a if statement to check if end of quiz and if so put function to go elsewhere
+
+}
+
+var end_of_quiz = () => {
+    // TODO handle if end of quiz
+    if (questions_answered == total_questions) {
+        // display view of the end screen and stuff
+    }
+}
+
+var update_scoreboard = () => {
+    document.getElementById("number-correct").innerHTML = "Number of correct answers: " + questions_correct;
+    document.getElementById("number-answered").innerHTML = "Question #" + questions_answered;
 }
 
 
