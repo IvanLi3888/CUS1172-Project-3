@@ -87,8 +87,8 @@
                     "id": 2,
                     "title": "What does the first normal form handle?",
                     "type": "multiple-choice",
-                    "correct": "WHERE",
-                    "explanation":"It checks if a relation contains a composite or multivalued attribute.",
+                    "correct": "It checks if a relation contains a composite or multivalued attribute.",
+                    "explanation":"The first normal form checks if a relation contains a composite or multivalued attribute.",
                     "answers": [
                         "It checks if there are any primary key conflicts in a table",
                         "It checks if a relation contains a composite or multivalued attribute.",

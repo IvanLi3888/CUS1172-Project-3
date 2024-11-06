@@ -150,6 +150,7 @@ var render_end_of_quiz = () => {
     return html;
 }
 async function handle_event(e) {
+    // handles event where use submits their name
     if (e.target.id == "submit-name") {
         login_user(document.querySelector("#name").value);
 
@@ -158,7 +159,7 @@ async function handle_event(e) {
     if (e.target.id == "continue") {
         // TODO put a if statement to check if end of quiz and if so put function to go elsewhere
         if (questions_answered == total_questions) {
-            end_of_quiz();
+            end_quiz();
         } else {
             questions_answered++;
             const view = await render_quiz_question(quiz, questions_answered);
@@ -169,12 +170,10 @@ async function handle_event(e) {
     // handles event when user clicks on a quiz in order to take the quiz
     if (e.target.className == "quiz-enter" && quizzes.includes(e.target.textContent)) {
         console.log(e.target.textContent);
-        questions_answered = 0;
         quiz = e.target.value;
         const view = await render_quiz_question(quiz, 1);
 
         document.querySelector("#quiz-widget").innerHTML = view;
-        // add code here to render the quiz chosen and start the quiz
     }
     // handles event when user chooses an answer
     if (e.target.classList.contains("answer-option") || e.target.id == "submit-answer") {
@@ -196,6 +195,17 @@ async function handle_event(e) {
         }
 
     }
+    // handles event where user retakes quiz
+    if (e.target.id == "retake"){
+        console.log(e.target.textContent);
+        const view = await render_quiz_question(quiz, 1);
+
+        document.querySelector("#quiz-widget").innerHTML = view;
+    }
+    // handles event where returns to main menu
+    if (e.target.id == "return-to-menu"){
+        login_user(username);
+    }
 
     return false;
 
@@ -215,10 +225,10 @@ var end_quiz = () => {
 
     if ((questions_correct / questions_answered) <= 0.80) {
         // failed quiz
-        document.querySelector("#result").innerHTML = "Sorry, you did not pass the quiz."
+        document.querySelector("#result").innerHTML = "Sorry "+ username +", you did not pass the quiz."
     } else {
         // passed quiz
-        document.querySelector("#result").innerHTML = "Congrats, you passed the quiz!"
+        document.querySelector("#result").innerHTML = "Congrats " + username + ", you passed the quiz!"
     }
 
 }
@@ -237,7 +247,7 @@ var quiz_correct = () => {
     setTimeout(async () => {
         // TODO put a if statement to check if end of quiz and if so put function to go elsewhere
         if (questions_answered == total_questions) {
-            end_of_quiz();
+            end_quiz();
         } else {
             questions_answered++;
             const view = await render_quiz_question(quiz, questions_answered);
@@ -257,12 +267,6 @@ var quiz_incorrect = async (answer, correct_answer) => {
 
 }
 
-var end_of_quiz = () => {
-    // TODO handle if end of quiz
-    if (questions_answered == total_questions) {
-        // display view of the end screen and stuff
-    }
-}
 
 var update_scoreboard = () => {
     document.getElementById("number-correct").innerHTML = "Number of correct answers: " + questions_correct;
