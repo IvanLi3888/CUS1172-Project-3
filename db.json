@@ -49,7 +49,8 @@
                     "id": 4,
                     "title": "Type the html element that allows you to use an external .css file for an html page",
                     "type": "open-ended",
-                    "correct": "<link>"
+                    "correct": "<link>",
+                    "explanation":"The <link> element allows you to add a external .css file using href='styles.css'"
                 },
                 {
                     "id": 5,

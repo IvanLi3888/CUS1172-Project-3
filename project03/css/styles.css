@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(203, 193, 137);
+}
+
+img{
+    height: auto;
+    width: 30%;
+}
+
+.quiz-enter{
+    margin-right: 2px;
+}
+
+#name {
+    width: 400px;
+}
+
+#scoreboard-widget {
+    margin: 5px;
+    border: 5px outset black;
+    background-color: rgb(181, 168, 168);
+}
+
+#quiz-widget {
+    min-height: 75vh;
+    background-color: white;
+}

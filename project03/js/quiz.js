@@ -14,8 +14,6 @@ var username;
 let quizzes = [];
 
 // TODO
-// Do end of quiz stuff
-// Do elapsed time
 // Do CSS to make the page look not terrible
 // Deploy page on Netlify
 // Submit deliverable (including the Netlify thingy)
@@ -26,9 +24,13 @@ let quizzes = [];
 var correct_answer;
 var questions_answered;
 var questions_correct;
-var time_elapsed;
 var total_questions;
 var quiz;
+
+// storing time stuff
+var start_time;
+var time_elapsed;
+var interval;
 
 var render_login = (view_id) => {
     console.log("Rendering startup");
@@ -70,7 +72,19 @@ var render_quiz_question = async (quiz_id, question_id) => {
         questions_correct = 0;
         time_elapsed = 0;
 
+        // set up clock
+        start_time = Date.now();
+        interval = setInterval(() => {
+            const current = Date.now();
+            time_elapsed = Math.floor((current - start_time) / 1000);
 
+            const minutes = Math.floor(time_elapsed / 60);
+            const seconds = time_elapsed % 60;
+
+            document.querySelector("#time-taken").innerHTML = "Time elasped: " + minutes + ":" + seconds.toString().padStart(2, '0')
+
+
+        });
         // set up scoreboard
         view = render_scoreboard();
         document.querySelector("#scoreboard-widget").innerHTML = view;
@@ -143,6 +157,8 @@ var render_scoreboard = () => {
 
 var render_end_of_quiz = () => {
     console.log("Rendering end of quiz");
+    console.log("Stopping clock");
+    clearInterval(interval);
     var source = document.querySelector("#end-of-quiz-view").innerHTML;
     var template = Handlebars.compile(source);
     var html = template();
@@ -196,14 +212,17 @@ async function handle_event(e) {
 
     }
     // handles event where user retakes quiz
-    if (e.target.id == "retake"){
+    if (e.target.id == "retake") {
         console.log(e.target.textContent);
         const view = await render_quiz_question(quiz, 1);
 
         document.querySelector("#quiz-widget").innerHTML = view;
     }
     // handles event where returns to main menu
-    if (e.target.id == "return-to-menu"){
+    if (e.target.id == "return-to-menu") {
+        // clears scoreboard
+        document.querySelector("#scoreboard-widget").innerHTML = "";
+        // load menu view
         login_user(username);
     }
 
@@ -225,7 +244,7 @@ var end_quiz = () => {
 
     if ((questions_correct / questions_answered) <= 0.80) {
         // failed quiz
-        document.querySelector("#result").innerHTML = "Sorry "+ username +", you did not pass the quiz."
+        document.querySelector("#result").innerHTML = "Sorry " + username + ", you did not pass the quiz."
     } else {
         // passed quiz
         document.querySelector("#result").innerHTML = "Congrats " + username + ", you passed the quiz!"
@@ -282,6 +301,8 @@ var login_user = async (input) => {
     view = render_quiz_select("#quiz-select", username);
 
     document.querySelector("#quiz-widget").innerHTML = view;
+
+    document.querySelector("#quiz-widget").classList = "container-fluid d-flex pt-5 justify-content-center align-items-center h-100";
 
     var menu = document.getElementById("menu");
 
