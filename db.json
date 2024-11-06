@@ -2,7 +2,7 @@
     "quiz-bank": [
         {
             "id": 0,
-            "title": "Quiz 1",
+            "title": "Quiz 1 - HTML/JS",
             "questions": [
                 {
                     "id": 1,
@@ -68,53 +68,67 @@
         },
         {
             "id": 1,
-            "title": "Quiz 2",
+            "title": "Quiz 2 - SQL",
             "questions": [
                 {
                     "id": 1,
-                    "title": "1+1?",
+                    "title": "How do you declare a primary key in SQL?",
                     "type": "multiple-choice",
-                    "correct": "2",
+                    "correct": "PRIMARY KEY (VALUE)",
+                    "explanation":"The syntax 'PRIMARY KEY (VALUE) is the correct way to declare a primary key.",
                     "answers": [
-                        "2",
-                        "3",
-                        "4",
-                        "5"
+                        "PKEY (VALUE)",
+                        "PK (VALUE)",
+                        "PRIMARY KEY (VALUE)",
+                        "PRIMARY KEY VALUE"
                     ]
                 },
                 {
                     "id": 2,
-                    "title": "How to eat?",
+                    "title": "What does the first normal form handle?",
                     "type": "multiple-choice",
-                    "correct": "lungs",
+                    "correct": "WHERE",
+                    "explanation":"It checks if a relation contains a composite or multivalued attribute.",
                     "answers": [
-                        "mouth",
-                        "nose",
-                        "legs",
-                        "feet"
+                        "It checks if there are any primary key conflicts in a table",
+                        "It checks if a relation contains a composite or multivalued attribute.",
+                        "It checks if there is redundant data in the table",
+                        "It checks if a relation contains a NULL value"
                     ]
                 },
                 {
                     "id": 3,
-                    "title": "true or false?",
-                    "type": "true-false",
-                    "correct": "true",
-                    "answers": [
-                        "true",
-                        "false"
-                    ]
+                    "title": "Type the clause that is used to specify a requirement in statements. (in all caps)",
+                    "type": "open-ended",
+                    "correct": "WHERE",
+                    "explanation": "The WHERE clause allows the statement to return data with the specified requirements."
+                
                 },
                 {
                     "id": 4,
-                    "title": "1 + 1?",
-                    "type": "fill-in",
-                    "correct": "window"
+                    "title": "Which of these pictures contains the correct way to retrieve all the data from a given table",
+                    "type": "image",
+                    "correct": "/project03/img/sql3.png",
+                    "explanation": "The third image contains the correct way to format the statement.",
+                    "answers": [
+                        "/project03/img/sql1.png",
+                        "/project03/img/sql2.png",
+                        "/project03/img/sql3.png",
+                        "/project03/img/sql4.png"
+                    ]
                 },
                 {
                     "id": 5,
-                    "title": "Did you like this quiz?",
-                    "type": "fill-in",
-                    "correct": "Yes"
+                    "title": "Which of these tables has a sensible primary key?",
+                    "type": "image",
+                    "correct": "/project03/img/sql6.png",
+                    "explanation":"The employee id would be unique to each employee. People can share last names, departments, and even passwords with one another.",
+                    "answers": [
+                        "/project03/img/sql5.png",
+                        "/project03/img/sql6.png",
+                        "/project03/img/sql7.png",
+                        "/project03/img/sql8.png"
+                    ]
                 }
             ]
         }
