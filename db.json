@@ -59,10 +59,10 @@
                     "correct": "/project03/img/js1.png",
                     "explanation": "The first image contains the correct way to define a function in Javascript.",
                     "answers": [
-                        "/project03/img/js1.png",
-                        "/project03/img/js2.png",
-                        "/project03/img/js3.png",
-                        "/project03/img/js4.png"
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/js1.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/js2.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/js3.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/js4.png"
                     ]
                 }
             ]
@@ -112,10 +112,10 @@
                     "correct": "/project03/img/sql3.png",
                     "explanation": "The third image contains the correct way to format the statement.",
                     "answers": [
-                        "/project03/img/sql1.png",
-                        "/project03/img/sql2.png",
-                        "/project03/img/sql3.png",
-                        "/project03/img/sql4.png"
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql1.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql2.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql3.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql4.png"
                     ]
                 },
                 {
@@ -125,10 +125,10 @@
                     "correct": "/project03/img/sql6.png",
                     "explanation":"The employee id would be unique to each employee. People can share last names, departments, and even passwords with one another.",
                     "answers": [
-                        "/project03/img/sql5.png",
-                        "/project03/img/sql6.png",
-                        "/project03/img/sql7.png",
-                        "/project03/img/sql8.png"
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql5.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql6.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql7.png",
+                        "https://effulgent-selkie-56e79b.netlify.app/project03/img/sql8.png"
                     ]
                 }
             ]
