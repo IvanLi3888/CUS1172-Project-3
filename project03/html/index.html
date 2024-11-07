@@ -130,7 +130,7 @@
     <div id="answer-bank" class="form-check">
         {{#each answers}}
         <button type="button" class="btn btn-outline-primary answer-option" value="{{this}}">
-            {{this}}
+            {{increment @index}}
         </button>
         <img class="mb-1" src="{{this}}" value="{{this}}">
         <br>

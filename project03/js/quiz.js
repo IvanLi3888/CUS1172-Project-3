@@ -108,6 +108,11 @@ var render_quiz_question = async (quiz_id, question_id) => {
         // if question is image-based
         var source = document.querySelector("#quiz-image").innerHTML;
     }
+    // helper if needing to number the buttons
+    Handlebars.registerHelper('increment', function(value) {
+        return parseInt(value) + 1;
+      });
+      
 
     var template = Handlebars.compile(source);
     var html = template(model.questions[question_id - 1]);
